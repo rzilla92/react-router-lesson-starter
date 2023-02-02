@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import About from "../components/About";
@@ -13,13 +14,27 @@ import "./App.css";
 
 function App() {
   return (
-    <div>
+    <Router>
       <Header />
       <main>
-        {/* Add Routes here! */}
+        <Route path='/about'>
+          <About />
+        </Route>
+        <Route path='/sign-up'>
+          <SignUp />
+        </Route>
+        <Route path='/articles'>
+          <Articles />
+        </Route>
+        <Route path='/categories'>
+          <Categories />
+        </Route>
+        <Route path='/profile'>
+          <Profile />
+        </Route>
       </main>
       <Footer />
-    </div>
+    </Router>
   );
 }
 
